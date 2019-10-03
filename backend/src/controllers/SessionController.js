@@ -3,6 +3,7 @@ const User = require('../models/User'); // Importa o modelo do Usuário
 
 // Lista de métodos de um controlador: index, show, store, update, destroy
 module.exports = {
+  // Cadastra um usuário
   async store(req, res) {
     // Busca o e-mail do usuário
     const { email } = req.body;
