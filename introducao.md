@@ -38,12 +38,20 @@ Para mais algumas informações:
 - [Blog Rocketseat](https://blog.rocketseat.com.br/)
 - [Rocketseat Docs](https://docs.rocketseat.dev/)
 
-# JSON Viewer (Extension)
+## JSON Viewer (Extension)
 
 O JSON Viewer é uma extensão que formata resposta no formato de JSON (exibindo de forma ordenada), possibilitando uma compreensão mais rápida da resposta para o desenvolvedor.
 
-# Insomnia
+## Insomnia
 
 - [Insomnia](https://insomnia.rest/)
 
 É uma aplicação para testar as rotas das API's, pois ela possui suporte para o vários métodos do HTTP (GET, POST, PUT, DELETE).
+
+## MVC
+
+É um padrão de código, sendo ele uma sigla de:
+
+- Models (Representa uma entidade)
+- Views (Parte renderizada ao usuário)
+- Controllers (Regra de negócio da aplicação, tratando as requisições recebidas pela aplicação)
