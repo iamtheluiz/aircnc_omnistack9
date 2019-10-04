@@ -55,3 +55,11 @@ O JSON Viewer é uma extensão que formata resposta no formato de JSON (exibindo
 - Models (Representa uma entidade)
 - Views (Parte renderizada ao usuário)
 - Controllers (Regra de negócio da aplicação, tratando as requisições recebidas pela aplicação)
+
+## ReactJS
+
+Para iniciar um projeto ReactJS, utilizando o Yarn, execute:
+
+```bash
+yarn create react-app PROJETO
+```
