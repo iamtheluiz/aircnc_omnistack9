@@ -63,3 +63,16 @@ Para iniciar um projeto ReactJS, utilizando o Yarn, execute:
 ```bash
 yarn create react-app PROJETO
 ```
+
+## Emmet com React
+
+Abra as preferências do VSCode (CTRL + SHIFT + P) e procure o item "Open Settings (JSON)" e adicione as seguintes linhas:
+
+```
+"emmet.syntaxProfiles": {
+  "javascript": "jsx",
+},
+"emmet.includeLanguages": {
+  "javascript": "javascriptreact",
+},
+```
