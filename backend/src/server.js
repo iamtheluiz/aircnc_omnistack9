@@ -3,6 +3,7 @@ const express = require('express'); // Importa o express
 const mongoose = require('mongoose'); // Importa o mongoose (controle do banco de dados)
 const routes = require('./routes'); // Importa as rotas do backend
 const cors = require('cors'); // Permite que aplicações externas se conectem com a API
+const path = require('path'); // Permite trabalhar com diretórios
 
 // Define o aplicativo express
 const app = express();
@@ -18,6 +19,9 @@ app.use(cors());
 
 // Define que o express utilizará o formato de JSON
 app.use(express.json());
+
+// Adiciona uma rota estática para as imagens
+app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads')));
 
 // Inclui as rotas do backend
 app.use(routes);
