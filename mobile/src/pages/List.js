@@ -28,7 +28,7 @@ export default function List() {
     <SafeAreaView style={styles.container}>
       <Image style={styles.logo} source={logo} />
 
-      <ScrollView style={{ paddingBottom: 20 }}>
+      <ScrollView>
         {techs.map(tech => <SpotList key={tech} tech={tech} />)}
       </ScrollView>
     </SafeAreaView>
