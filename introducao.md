@@ -76,3 +76,19 @@ Abra as preferências do VSCode (CTRL + SHIFT + P) e procure o item "Open Settin
   "javascript": "javascriptreact",
 },
 ```
+
+## Expo
+
+Uma ferramente que visa facilitar a construção de aplicativos nativos com React. A cli dele pode ser instalada utilizando o comando:
+
+```
+npm install -g expo-cli
+```
+
+E para iniciar um projeto utilize:
+
+```
+expo-cli init NOME
+```
+
+Logo após, selecione as configurações da aplicação, como nome e template.
