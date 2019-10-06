@@ -11,6 +11,16 @@ const SpotSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   }
+}, {
+  toJSON: {
+    // Adiciona os virtuals
+    virtuals: true,
+  }
+});
+
+// Cria um campo "virtual" na listagem
+SpotSchema.virtual('thumbnail_url').get(function() {
+  return `http://localhost:3333/files/${this.thumbnail}`;
 });
 
 // Exporta o modelo

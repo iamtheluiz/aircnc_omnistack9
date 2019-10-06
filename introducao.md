@@ -55,3 +55,40 @@ O JSON Viewer é uma extensão que formata resposta no formato de JSON (exibindo
 - Models (Representa uma entidade)
 - Views (Parte renderizada ao usuário)
 - Controllers (Regra de negócio da aplicação, tratando as requisições recebidas pela aplicação)
+
+## ReactJS
+
+Para iniciar um projeto ReactJS, utilizando o Yarn, execute:
+
+```bash
+yarn create react-app PROJETO
+```
+
+## Emmet com React
+
+Abra as preferências do VSCode (CTRL + SHIFT + P) e procure o item "Open Settings (JSON)" e adicione as seguintes linhas:
+
+```
+"emmet.syntaxProfiles": {
+  "javascript": "jsx",
+},
+"emmet.includeLanguages": {
+  "javascript": "javascriptreact",
+},
+```
+
+## Expo
+
+Uma ferramente que visa facilitar a construção de aplicativos nativos com React. A cli dele pode ser instalada utilizando o comando:
+
+```
+npm install -g expo-cli
+```
+
+E para iniciar um projeto utilize:
+
+```
+expo-cli init NOME
+```
+
+Logo após, selecione as configurações da aplicação, como nome e template.
