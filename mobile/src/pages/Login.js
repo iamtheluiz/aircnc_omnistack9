@@ -70,7 +70,6 @@ export default function Login({ navigation }) {
           style={styles.input}
           placeholder="Tecnologias de interesse"
           placeholderTextColor="#999"
-          keyboardType="email-address"
           autoCapitalize="words"
           autoCorrect={false}
           value={techs}
