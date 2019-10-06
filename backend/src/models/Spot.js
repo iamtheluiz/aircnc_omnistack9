@@ -20,7 +20,7 @@ const SpotSchema = mongoose.Schema({
 
 // Cria um campo "virtual" na listagem
 SpotSchema.virtual('thumbnail_url').get(function() {
-  return `http://localhost:3333/files/${this.thumbnail}`;
+  return `http://192.168.0.104:3333/files/${this.thumbnail}`;
 });
 
 // Exporta o modelo
