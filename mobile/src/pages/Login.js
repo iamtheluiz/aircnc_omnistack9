@@ -1,10 +1,125 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import {
+  View,
+  KeyboardAvoidingView,
+  Image,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  AsyncStorage,
+} from 'react-native';
 
-export default function Login() {
+import api from '../services/api';
+
+import logo from '../assets/logo.png';
+
+export default function Login({ navigation }) {
+  // State
+  const [email, setEmail] = useState("");
+  const [techs, setTechs] = useState("");
+
+  useEffect(() => {
+    // Verifica se o usuário já acessou o sistema
+    AsyncStorage.getItem('@aircnc/user').then(user => {
+      // Verifica se já existe valor dentro da variável
+      if (user) {
+        // Envia para a lista de spots
+        navigation.navigate('List');
+      }
+    });
+  }, []);
+
+  // Captura os dados do formulário
+  async function handleSubmit() {
+    // Cadastra/Captura os dados do backend
+    const response = await api.post('/sessions', {
+      email
+    });
+
+    // Captura o código do usuário
+    const { _id } = response.data;
+
+    // Armazena o código do usuário e as tecnologias de interesse
+    await AsyncStorage.setItem('@aircnc/user', _id);
+    await AsyncStorage.setItem('@aircnc/techs', techs);
+
+    // Envia para a lista de spots
+    navigation.navigate('List');
+  }
+
   return (
-    <View>
-      <Text>Hey!</Text>
-    </View>
+    <KeyboardAvoidingView behavior="padding" style={styles.container}>
+      <Image source={logo} />
+
+      <View style={styles.form}>
+        <Text style={styles.label}>SEU E-MAIL *</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Seu e-mail"
+          placeholderTextColor="#999"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
+          value={email}
+          onChangeText={setEmail}
+        />
+
+        <Text style={styles.label}>TECNOLOGIAS *</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Tecnologias de interesse"
+          placeholderTextColor="#999"
+          keyboardType="email-address"
+          autoCapitalize="words"
+          autoCorrect={false}
+          value={techs}
+          onChangeText={setTechs}
+        />
+
+        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+          <Text style={styles.buttonText}>Encontrar spots</Text>
+        </TouchableOpacity>
+      </View>
+    </KeyboardAvoidingView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  form: {
+    alignSelf: 'stretch',
+    paddingHorizontal: 30,
+    marginTop: 30,
+  },
+  label: {
+    fontWeight: 'bold',
+    color: '#444',
+    marginBottom: 8,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#DDD',
+    paddingHorizontal: 20,
+    fontSize: 16,
+    height: 44,
+    marginBottom: 20,
+    borderRadius: 2,
+  },
+  button: {
+    height: 42,
+    backgroundColor: '#f05a5b',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 2,
+  },
+  buttonText: {
+    color: '#FFF',
+    fontWeight: 'bold',
+    fontSize: 16,
+  }
+})
