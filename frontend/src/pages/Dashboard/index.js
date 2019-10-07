@@ -63,8 +63,8 @@ export default function Dashboard() {
             <p>
               <strong>{request.user.email}</strong> está solicitando uma reserva em <strong>{request.spot.company}</strong> para a data: <strong>{request.date}</strong>
             </p>
-            <button className="accept" onclick={() => handleAccept(request._id)}>ACEITAR</button>
-            <button className="reject" onclick={() => handleReject(request._id)}>REJEITAR</button>
+            <button className="accept" onClick={() => handleAccept(request._id)}>ACEITAR</button>
+            <button className="reject" onClick={() => handleReject(request._id)}>REJEITAR</button>
           </li>
         ))}
       </ul>
