@@ -20,7 +20,7 @@
 O Aircnc é um aplicativo onde empresas podem disponibilizar espaços para que desenvolvedores "aluguem" os mesmos, tendo contato com seu ambiente de desenvolvimento.
 
 <p align="center">
-  <img src="https://github.com/iamtheluiz/aircnc_omnistack9/blob/master/assets/home.png?raw=true" alt="Home page" width="1280" height="720">
+  <img src="https://github.com/iamtheluiz/aircnc_omnistack9/blob/master/assets/home.png?raw=true" alt="Home page" width="882" height="496">
 </p>
 
 ## Idealizadores
